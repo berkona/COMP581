@@ -74,6 +74,13 @@ public class DriveUnit {
 		left.endSynchronization();
 	}
 	
+	public void backward() {
+		left.startSynchronization();
+		left.backward();
+		right.backward();
+		left.endSynchronization();
+	}
+	
 	public void stop() {
 		left.startSynchronization();
 		left.stop(true);
