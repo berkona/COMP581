@@ -9,7 +9,7 @@ import lejos.hardware.sensor.EV3UltrasonicSensor;
 /**
  * Team:
  * Jon Monroe PID 7141-87927
- *
+ * Jake Sellinger PID 720534409
  */
 public class Lab1 {
 
