@@ -1,8 +1,8 @@
-import lejos.robotics.RegulatedMotor;
+import lejos.hardware.motor.EV3LargeRegulatedMotor;
 
 public class DriveUnit {
-	RegulatedMotor left;
-	RegulatedMotor right;
+	EV3LargeRegulatedMotor left;
+	EV3LargeRegulatedMotor right;
 	double wheelRadius;
 	double wheelbaseLength;
 	
@@ -10,8 +10,8 @@ public class DriveUnit {
 	double wheelbaseCircumference;
 	
 	public DriveUnit(
-			RegulatedMotor left, 
-			RegulatedMotor right, 
+			EV3LargeRegulatedMotor left, 
+			EV3LargeRegulatedMotor right, 
 			double wheelRadius, 
 			double wheelbaseLength) {
 			this.left = left;
@@ -19,7 +19,7 @@ public class DriveUnit {
 			this.wheelRadius = wheelRadius;
 			this.wheelbaseLength = wheelbaseLength;
 			
-			left.synchronizeWith(new RegulatedMotor[] { right });
+			left.synchronizeWith(new EV3LargeRegulatedMotor[] { right });
 			
 			wheelCircumference = 2 * Math.PI * wheelRadius;
 			wheelbaseCircumference = 2 * Math.PI * wheelbaseLength;
@@ -47,8 +47,8 @@ public class DriveUnit {
 	public void straight(double distance) {
 		int degrees = degreesForDistance(distance);
 		left.startSynchronization();
-		left.rotate(degrees);
-		right.rotate(degrees);
+		left.rotate(degrees, true);
+		right.rotate(degrees, true);
 		left.endSynchronization();
 	}
 	
