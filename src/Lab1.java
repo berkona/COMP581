@@ -38,7 +38,7 @@ public class Lab1 {
 		
 		driveUnit = new DriveUnit(leftMotor, rightMotor, Robot.WHEEL_RADIUS, Robot.ROBOT_WIDTH);
 		driveUnit.SetAcceleration(720);
-		driveUnit.SetSpeed(360);
+		driveUnit.SetSpeed(180);
 		
 		bumpSensor = new EV3TouchSensor(SensorPort.S1);
 		rangeSensor = new EV3UltrasonicSensor(SensorPort.S2);

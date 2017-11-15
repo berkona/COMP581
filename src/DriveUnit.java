@@ -31,8 +31,12 @@ public class DriveUnit {
 	}
 	
 	public void SetSpeed(int degreesPerSecond) {
-		left.setSpeed(degreesPerSecond);
-		right.setSpeed(degreesPerSecond);
+		SetSpeed(degreesPerSecond, degreesPerSecond);
+	}
+	
+	public void SetSpeed(int leftSpeed, int rightSpeed) {
+		left.setSpeed(leftSpeed);
+		right.setSpeed(rightSpeed);
 	}
 	
 	public void waitMove() {
